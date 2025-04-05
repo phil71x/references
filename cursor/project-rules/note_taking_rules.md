@@ -95,20 +95,7 @@
    - Link validation
    - Format verification
 
-## Templates
-
-1. **Usage Guidelines**
-   - Template selection
-   - Customization rules
-   - Required sections
-   - Optional elements
-
-2. **Template Types**
-   - Experiment notes
-   - Feature documentation
-   - Bug reports
-   - Process documentation
-
 ## Meta
-- Source: references/cursor_rules/note_taking.md
-- Repository: https://github.com/phil71x/references 
+- Source: references/cursor/project-rules/note_taking_rules.md
+- Repository: https://github.com/phil71x/references
+- Last Updated: 2024-04-05 

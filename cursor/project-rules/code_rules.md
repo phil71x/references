@@ -97,5 +97,6 @@
    - Technical debt tracking
 
 ## Meta
-- Source: references/cursor_rules/code_standards.md
-- Implementation: cursor-ai-experiments 
+- Source: references/cursor/project-rules/code_rules.md
+- Repository: https://github.com/phil71x/references
+- Last Updated: 2024-04-05 

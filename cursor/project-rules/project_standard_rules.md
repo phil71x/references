@@ -13,6 +13,7 @@ All other rule files referenced here serve as templates and detailed guidelines 
 - [Version Control](version_control_rules.md) - Git workflow and repository management
 - [Testing Standards](testing_rules.md) - Test organization and quality assurance
 - [Markdown](markdown_rules.md) - Documentation formatting and structure
+- [AI Limitations](ai_limitations_rules.md) - Known operational limitations of the AI Assistant
 
 ## Project Health
    - Documentation completeness
@@ -99,19 +100,13 @@ All other rule files referenced here serve as templates and detailed guidelines 
    - Practical examples
 
 2. **Meta Section Pattern**
-   - Purpose:
-     - Track source of truth (references repository)
-     - Document where rules are being implemented
-     - Enable version tracking
-     - Facilitate synchronization between projects
-   - Required Fields:
-     - Source: Original template location in references
-     - Repository: GitHub URL of the references project
-   - Optional Fields:
-     - Version: For tracking major changes
-     - Last Updated: Timestamp of last update
-     - Status: Active/Draft/Deprecated
-     - Contributors: Who maintains these rules
+   - Source: references/cursor_rules/[filename]
+   - Repository: https://github.com/phil71x/references (if applicable)
+   - Parent: [parent_file] (if applicable)
+   - Last Updated: YYYY-MM-DD
+
+## AI Assistant Operational Note
+Before attempting tasks, the AI Assistant will proactively consider its known operational limitations relevant to the request, as documented in [ai_limitations_rules.md](ai_limitations_rules.md). If any limitations prevent fulfilling the request directly or require user facilitation, the Assistant will state this clearly.
 
 ## Implementation Requirements
    - Every project MUST have two rule files:
@@ -120,19 +115,18 @@ All other rule files referenced here serve as templates and detailed guidelines 
    - project_standard_rules.md:
      - Must be an exact copy of this file
      - Cannot be modified directly in projects
-     - Must be updated through references repository sync
+     - Must be updated through references repository sync.
+       **Note:** Due to AI limitations, the user must facilitate this sync (e.g., provide updated files from the repository).
      - Serves as the common foundation across all projects
    - project_specific_rules.md:
      - Must follow the same structure as this file
      - Can only extend or provide exceptions to standard rules
      - Must document and justify any deviations
      - Should reference relevant sections in project_standard_rules.md
-   - Regular sync with references repository is mandatory
-   - New common patterns should be proposed to references repository
+   - Regular sync with references repository is mandatory, facilitated by the user.
+   - New common patterns should be proposed to references repository.
 
 ## Meta
-- Source: references/cursor_rules/project_standards.md
+- Source: references/cursor/project-rules/project_standard_rules.md
 - Repository: https://github.com/phil71x/references
-- Status: Active
-- Version: 1.0
 - Last Updated: 2024-04-05 

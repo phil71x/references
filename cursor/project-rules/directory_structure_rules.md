@@ -133,5 +133,6 @@ project_root/
    - Maintain README files
 
 ## Meta
-- Source: references/cursor_rules/directory_structure.md
-- Repository: https://github.com/phil71x/references 
+- Source: references/cursor/project-rules/directory_structure_rules.md
+- Repository: https://github.com/phil71x/references
+- Last Updated: 2024-04-05 

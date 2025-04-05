@@ -98,4 +98,9 @@ Our `.markdownlint.json` configuration includes:
    * Keep this document current
    * Add new rules as needed
    * Document rule changes
-   * Update examples 
+   * Update examples
+
+## Meta
+- Source: references/cursor/project-rules/markdown_rules.md
+- Repository: https://github.com/phil71x/references
+- Last Updated: 2024-04-05 

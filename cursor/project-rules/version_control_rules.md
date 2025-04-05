@@ -109,5 +109,6 @@ type(scope): concise description
    - Submodule management
 
 ## Meta
-- Source: references/cursor_rules/version_control.md
-- Repository: https://github.com/phil71x/references 
+- Source: references/cursor/project-rules/version_control_rules.md
+- Repository: https://github.com/phil71x/references
+- Last Updated: 2024-04-05 

@@ -92,5 +92,6 @@
    - Quality metrics
 
 ## Meta
-- Source: references/cursor_rules/testing_standards.md
-- Implementation: cursor-ai-experiments 
+- Source: references/cursor/project-rules/testing_rules.md
+- Repository: https://github.com/phil71x/references
+- Last Updated: 2024-04-05 

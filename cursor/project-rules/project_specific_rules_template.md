@@ -7,8 +7,6 @@ INSTRUCTIONS:
 1. Replace [Project Name] with your project name
 2. Remove sections that don't apply to your project
 3. Add sections specific to your project's needs
-4. Keep the Meta section updated
-5. Document any deviations from project_standard_rules.md
 -->
 
 ## Project Overview
@@ -101,18 +99,7 @@ INSTRUCTIONS:
    - Impact assessment
 
 ## Meta
-- Source: [project-name]/.cursor/rules/project_specific_rules.md
+- Source: references/cursor/project-rules/project_specific_rules_template.md
+- Repository: https://github.com/phil71x/references
 - Parent: project_standard_rules.md
-- Status: [Active/Draft/Deprecated]
-- Version: [x.y]
-- Last Updated: [YYYY-MM-DD]
-- Owner: [Project Owner/Team]
-
-<!--
-META INSTRUCTIONS:
-1. Update Source with your project name
-2. Set appropriate Status
-3. Start with Version 1.0
-4. Keep Last Updated current
-5. Assign clear ownership
---> 
+- Last Updated: YYYY-MM-DD
