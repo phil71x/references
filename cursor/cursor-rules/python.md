@@ -1,14 +1,3 @@
----
-description: 
-globs: 
-alwaysApply: true
----
-
----
-description: Python best practices and patterns for modern software development with Flask and SQLite
-globs: **/*.py, src/**/*.py, tests/**/*.py
----
-
 # Python Best Practices
 
 ## Project Structure
