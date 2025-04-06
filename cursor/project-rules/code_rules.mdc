@@ -1,3 +1,8 @@
+---
+description: Python code standards and best practices to follow throughout the project
+globs: **/*.py
+---
+
 # Code Standards
 
 ## General Guidelines
@@ -9,7 +14,7 @@
    - Logical code grouping
 
 2. **Code Style**
-   - Follow language-specific style guides
+   - Follow PEP 8 style guide
    - Consistent naming conventions
    - Clear and meaningful names
    - Proper indentation and spacing
@@ -20,19 +25,24 @@
    - API documentation standards
    - Comment guidelines
 
-## Language-Specific Standards
+## Python Standards
 
-1. **Python**
+1. **Python Style**
    - Follow PEP 8 style guide
-   - Type hints for function signatures
+   - Python 3.11+ compatibility required
+   - Black formatting with 88 character line length
+   - Pylint configuration adherence
+   - Type hints required for function signatures
    - Docstring format (Numpy style)
    - Module-level organization
+   - Pandas optimization practices for financial computations
 
-2. **JavaScript/TypeScript**
-   - ESLint configuration
-   - TypeScript strict mode
-   - Module import/export patterns
-   - React/framework conventions
+2. **Dependency Management**
+   - Use PDM for package management
+   - Clear version constraints required
+   - Organize dependencies into logical groups
+   - Regular dependency updates and security checks
+   - Document all dependency changes
 
 ## Code Quality
 
@@ -61,12 +71,18 @@
    - Resource usage patterns
    - Memory management
    - Algorithmic efficiency
+   - Pandas performance optimization:
+     * Use appropriate data types
+     * Vectorized operations preferred
+     * Minimize DataFrame copies
+     * Use efficient financial computation methods
 
-2. **Code Efficiency**
-   - Caching strategies
-   - Async/await patterns
-   - Resource cleanup
-   - Memory leaks prevention
+2. **Financial Computation Standards**
+   - Decimal precision requirements
+   - Numerical stability considerations
+   - Date and time handling best practices
+   - Financial calculation validation
+   - Performance benchmarking for critical operations
 
 ## Security Standards
 
@@ -85,10 +101,12 @@
 ## Implementation
 
 1. **Tools and Automation**
-   - Linter configuration
-   - Formatter setup
+   - Black formatter configuration
+   - Pylint with project-specific rules
+   - PDM dependency management
    - IDE settings
    - Pre-commit hooks
+   - Static type checking setup
 
 2. **Monitoring and Metrics**
    - Code quality metrics
@@ -99,4 +117,4 @@
 ## Meta
 - Source: references/cursor/project-rules/code_rules.md
 - Repository: https://github.com/phil71x/references
-- Last Updated: 2024-04-05 
+- Last Updated: 2024-04-07 

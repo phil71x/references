@@ -1,0 +1,161 @@
+---
+description: Standards for Python testing using unittest framework
+globs: tests/**/*.py
+---
+
+# Testing Standards with unittest
+
+## Test Organization
+
+1. **Test Structure**
+   - Use Python's unittest framework
+   - Follow TestCase class pattern
+   - Group related tests in test suites
+   - Use appropriate assertion methods
+   - Maintain test isolation
+
+2. **Test Location**
+   - Place unit tests in tests/unit/ directory
+   - Mirror source code directory structure
+   - Name test files with *_test.py pattern (not test_*.py)
+   - Keep test helpers in tests/helpers/ subdirectory
+   - Store test fixtures in tests/fixtures/ and tests/data/ subdirectories
+
+## Coverage Requirements
+
+1. **Code Coverage**
+   - Aim for minimum 80% coverage
+   - Use coverage.py to measure
+   - Cover critical paths completely
+   - Test edge cases thoroughly
+   - Test both success and failure cases
+
+2. **Test Scope**
+   - Unit test all functions and methods
+   - Create integration tests for component interactions
+   - Test API endpoints with mock requests
+   - Test database operations with test database
+
+## Testing Practices
+
+1. **Test Design**
+   - Follow Arrange-Act-Assert pattern
+   - Use setUp() and tearDown() for test preparation
+   - Create descriptive test method names (test_*)
+   - Use docstrings for each test method explaining its purpose
+   - Create separate test classes for each component/feature
+
+2. **Test Data**
+   - Create test fixtures for common data
+   - Use setUpClass() for expensive setup operations
+   - Use setUp() for per-test initialization
+   - Store test data in CSV files in tests/data/ directory
+   - Load test data with pandas for data-intensive tests
+
+3. **Assertion Standards**
+   - Use pandas testing functions for DataFrame/Series comparisons:
+     * pd.testing.assert_frame_equal()
+     * pd.testing.assert_series_equal()
+   - Use rtol parameter for floating-point comparisons
+   - Include helpful error messages in assertions
+   - Verify expected vs. actual values in correct order
+   - Test for exceptions with assertRaises()
+
+## Quality Assurance
+
+1. **Test Execution**
+   - Run tests using unittest discover
+   - Configure tests in pytest.ini
+   - Use verbosity=2 for detailed output
+   - Set up test runners in IDE
+   - Implement test timeouts for long-running tests
+
+2. **Bug Regression**
+   - Create regression tests for every bug fix
+   - Document bug ID in test docstrings
+   - Verify test fails before fix, passes after
+   - Maintain regression test suite
+   - Include edge cases in regression tests
+
+## Automation
+
+1. **CI/CD Integration**
+   - Run tests in GitHub Actions workflows
+   - Fail builds on test failures
+   - Generate coverage reports
+   - Store test artifacts
+   - Send notifications on test failures
+
+2. **Performance Testing**
+   - Create dedicated performance test classes
+   - Test with different data frequencies (daily/weekly/monthly)
+   - Compare results across frequencies for consistency
+   - Use pandas-optimized code for data manipulations
+   - Benchmark critical operations 
+
+## Implementation
+
+1. **Tools and Configuration**
+   - unittest for test framework
+   - pandas testing utilities for data validation
+   - pathlib for file path management
+   - pytest (optional) for advanced features
+   - GitHub Actions for CI/CD
+
+2. **Example Test Structure**
+
+```python
+# File: performance_test.py
+import unittest
+from pathlib import Path
+
+import pandas as pd
+
+from mymodule import performance
+
+
+class TestPerformance(unittest.TestCase):
+    """Base test class for performance statistics."""
+
+    @classmethod
+    def setUpClass(cls):
+        """Set up test data that will be shared across test methods."""
+        data_dir = Path(__file__).parent / "data"
+
+        # Load test data from CSV files
+        cls.daily_data = pd.read_csv(
+            data_dir / "sample_returns.csv", index_col=0, parse_dates=True
+        )
+        
+    def setUp(self):
+        """Set up test-specific data."""
+        # Initialize per-test data or state
+        self.calculator = performance.PerformanceCalculator()
+        
+    def test_annualized_returns(self):
+        """Test the annualized returns calculation."""
+        # Arrange
+        expected = pd.Series({"A1": 0.127961, "A2": 0.132815})
+        
+        # Act
+        actual = self.calculator.calculate_returns(self.daily_data)
+        
+        # Assert
+        pd.testing.assert_series_equal(actual, expected, rtol=1e-4)
+        
+    def test_volatility_calculation(self):
+        """Test the volatility calculation method."""
+        # Arrange
+        expected = pd.Series({"A1": 0.172062, "A2": 0.194326})
+        
+        # Act
+        actual = self.calculator.calculate_volatility(self.daily_data)
+        
+        # Assert
+        pd.testing.assert_series_equal(actual, expected, rtol=1e-4)
+```
+
+## Meta
+- Source: references/cursor/project-rules/testing_rules.md
+- Repository: https://github.com/phil71x/references
+- Last Updated: 2024-04-06 

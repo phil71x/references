@@ -1,3 +1,8 @@
+---
+description: Standards for organizing directories and file structure in the project
+globs: **/*
+---
+
 # Directory Structure Standards
 
 ## Project Root Structure
@@ -12,9 +17,7 @@ project_root/
 │   ├── services/       # Service integrations
 │   └── types/          # Type definitions
 ├── tests/              # Test files
-│   ├── unit/          # Unit tests
-│   ├── integration/   # Integration tests
-│   └── e2e/           # End-to-end tests
+│   └── unit/          # Unit tests with *_test.py naming
 ├── docs/              # Documentation
 │   ├── api/          # API documentation
 │   ├── setup/        # Setup guides
@@ -22,12 +25,7 @@ project_root/
 ├── scripts/          # Build and utility scripts
 ├── config/           # Configuration files
 ├── .github/          # GitHub specific files
-├── notes/            # Project notes and records
-│   ├── experiments/  # Experiment documentation
-│   ├── features/    # Feature development notes
-│   ├── bugs/       # Bug tracking and fixes
-│   └── meta/       # Process documentation
-└── fixes/          # Solutions to major issues
+└── notes/            # Project notes with descriptive filenames
 ```
 
 ## Language-Specific Structures
@@ -42,26 +40,12 @@ project_root/
 │       ├── utils/
 │       └── cli/
 ├── tests/
+│   └── unit/          # Unit tests with *_test.py naming
 ├── docs/
 └── requirements/
     ├── base.txt
     ├── dev.txt
     └── prod.txt
-```
-
-2. **Node.js Projects**
-```
-project_root/
-├── src/
-│   ├── components/
-│   ├── hooks/
-│   ├── contexts/
-│   └── styles/
-├── public/
-├── tests/
-└── config/
-    ├── webpack/
-    └── jest/
 ```
 
 ## Environment-Specific Directories
@@ -104,6 +88,23 @@ project_root/
 └── README.md
 ```
 
+## Notes Organization
+
+1. **Filename Conventions**
+   - Use descriptive filenames
+   - Add prefixes for categorization (experiment-, feature-, fix-, process-)
+   - Use lowercase with hyphens for multi-word names
+   - Maintain .md extension for all notes
+   - Track dates in document Meta sections, not filenames
+
+2. **Content Organization**
+   - Start with clear title
+   - Use consistent header hierarchy
+   - Include metadata at top (author, status)
+   - Track dates in Meta section
+   - Organize with logical sections
+   - End with references or related links
+
 ## Directory Naming Conventions
 
 1. **Standard Names**
@@ -135,4 +136,4 @@ project_root/
 ## Meta
 - Source: references/cursor/project-rules/directory_structure_rules.md
 - Repository: https://github.com/phil71x/references
-- Last Updated: 2024-04-05 
+- Last Updated: 2024-04-06 

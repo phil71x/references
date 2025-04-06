@@ -1,3 +1,9 @@
+---
+description: Known operational limitations of the AI Assistant
+globs: **/*
+alwaysApply: true
+---
+
 # AI Assistant Operational Limitations
 
 This document outlines known operational limitations of the AI Assistant.

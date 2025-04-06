@@ -1,3 +1,13 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Standards for version control, Git workflow, and repository management
+globs: .git/**, .github/**, **/.gitignore
+---
+
 # Version Control Rules
 
 ## Commit Guidelines

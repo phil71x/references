@@ -1,26 +1,40 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Standards for note-taking, documentation, and knowledge management
+globs: notes/*.md
+---
+
 # Note-Taking Rules
 
 ## Documentation Types
 
 1. **Experiment Notes**
+   - Use `experiment-` prefix in filename
    - Document hypothesis and goals
    - Record methodology and steps
    - Track results and observations
    - Note conclusions and next steps
 
 2. **Feature Development**
+   - Use `feature-` prefix in filename
    - Requirements and specifications
    - Implementation approach
    - Technical decisions
    - Testing strategy
 
-3. **Bug Reports**
+3. **Bug Reports and Fixes**
+   - Use `fix-` prefix in filename
    - Issue description
    - Reproduction steps
    - Investigation findings
    - Solution implementation
 
 4. **Process Documentation**
+   - Use `process-` prefix in filename
    - Workflow descriptions
    - Setup procedures
    - Maintenance tasks
@@ -42,10 +56,10 @@
    - Complete information
 
 3. **Metadata**
-   - Categories and tags
-   - Related documents
-   - Version information
-   - Status indicators
+   - Use descriptive filenames
+   - Add [DRAFT] in document header when in progress (remove when complete)
+   - Include categories in content
+   - Track dates in the Meta section of the document
 
 ## Documentation Practices
 
@@ -62,24 +76,43 @@
    - List organization
 
 3. **Cross-Referencing**
-   - Internal document links
-   - External references
-   - Code file links
-   - Issue/PR references
+   - Link to other notes by filename
+   - Reference code files with relative paths
+   - Link to external resources with full URLs
+   - Mention related issues/PRs by ID
 
 ## Version Management
 
 1. **Document History**
-   - Track changes
-   - Update logs
-   - Version numbering
-   - Change rationale
+   - Include revision history at end of document
+   - Document major changes
+   - Use date-based versioning
+   - Include change rationale
 
 2. **Collaboration**
    - Review process
    - Feedback incorporation
    - Shared editing
    - Conflict resolution
+
+## File Naming Conventions
+
+1. **Prefixes**
+   - `experiment-`: For experimentation notes
+   - `feature-`: For feature development
+   - `fix-`: For bug fixes and solutions
+   - `process-`: For workflow and process docs
+   - `cursor-`: For Cursor AI specific notes
+
+2. **Naming Pattern**
+   - Use lowercase with hyphens
+   - Be specific but concise
+   - Dates are tracked in document Meta sections, not filenames
+   - Examples:
+     * `experiment-cursor-rule-testing.md`
+     * `fix-frontmatter-duplication.md`
+     * `process-git-workflow.md`
+     * `feature-cursor-rules-implementation.md`
 
 ## Implementation
 
@@ -98,4 +131,4 @@
 ## Meta
 - Source: references/cursor/project-rules/note_taking_rules.md
 - Repository: https://github.com/phil71x/references
-- Last Updated: 2024-04-05 
+- Last Updated: 2024-04-06 

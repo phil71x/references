@@ -1,6 +1,17 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Template for creating project-specific rules that extend common standards
+globs: **/*
+alwaysApply: true
+---
+
 # [Project Name] - Project Specific Rules
 
-This file contains rules specific to the [Project Name] project. It extends and complements the common standards defined in project_standard_rules.md.
+This file contains rules specific to the [Project Name] project. It extends and complements the common standards defined in project_standard_rules.mdc.
 
 <!-- 
 INSTRUCTIONS:
@@ -91,7 +102,7 @@ INSTRUCTIONS:
 - [Requirement 4]
 
 ## Deviations from Standard Rules
-<!-- Document and justify any deviations from project_standard_rules.md -->
+<!-- Document and justify any deviations from project_standard_rules.mdc -->
 1. **[Standard Rule Reference]**
    - Deviation description
    - Justification
@@ -99,7 +110,7 @@ INSTRUCTIONS:
    - Impact assessment
 
 ## Meta
-- Source: references/cursor/project-rules/project_specific_rules_template.md
+- Source: references/cursor/project-rules/project_specific_rules_template.mdc
 - Repository: https://github.com/phil71x/references
-- Parent: project_standard_rules.md
-- Last Updated: YYYY-MM-DD
+- Parent: project_standard_rules.mdc
+- Last Updated: 2024-04-06

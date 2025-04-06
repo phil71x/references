@@ -1,3 +1,8 @@
+---
+description: Standards for markdown formatting and documentation throughout the project
+globs: **/*.md
+---
+
 # Markdown Rules and Standards
 
 ## Overview

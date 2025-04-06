@@ -1,0 +1,118 @@
+---
+description: Standards for creating and formatting Cursor project rules
+globs: .cursor/rules/**/*.mdc
+alwaysApply: true
+---
+
+# Cursor Rule Format Standards
+
+This document outlines the proper formatting and configuration of Cursor project rules.
+
+## Rule Structure
+
+Each rule file should consist of:
+
+1. **Frontmatter** - YAML configuration at the top of the file
+2. **Content** - Markdown formatted content with rule details
+3. **Meta** - Information about the source and last update date
+
+## Frontmatter Configuration
+
+Proper frontmatter must include:
+
+```yaml
+---
+description: Brief description of what the rule does
+globs: Pattern matching files this rule applies to
+alwaysApply: true/false depending on rule scope
+---
+```
+
+### Key Fields
+
+1. **Description**
+   - Clear, concise explanation of the rule's purpose
+   - Used by the AI to determine rule relevance
+   - Should be specific enough for proper rule targeting
+
+2. **Globs**
+   - File pattern(s) that determine when a rule is injected into context
+   - Examples:
+     * `**/*.py` - All Python files
+     * `src/**/*` - All files in src directory
+     * `**/*` - All files in the project
+
+3. **AlwaysApply**
+   - Controls whether a rule is automatically activated in every conversation
+   - `true` - Rule is always applied regardless of context
+   - `false` - Rule is only applied when AI determines it's relevant
+
+## Globs vs AlwaysApply
+
+It's important to understand the difference between `globs: "**/*"` and `alwaysApply: true`:
+
+### Key Differences
+
+`globs: "**/*"` determines which files the rule will be injected for in the context. This pattern matches all files in your project, but it only controls the injection stage, not activation.
+
+`alwaysApply: true` controls whether the rule is automatically activated in every conversation, regardless of context relevance.
+
+### How They Work Together
+
+Cursor's rule system works in two stages:
+
+1. **Injection Stage**: Rules are injected into the system prompt context based on file matching (controlled by `globs`)
+2. **Activation Stage**: Rules are actually applied based on relevance (controlled by `alwaysApply` and `description`)
+
+A rule with `globs: "**/*"` but without `alwaysApply: true` will be injected for all files but only activated when the AI determines it's relevant based on the `description` field.
+
+For a truly global rule that always applies, you should use both:
+
+```yaml
+---
+description: Global Rule
+globs: **/*
+alwaysApply: true
+---
+```
+
+This ensures the rule is both injected for all files and automatically activated in every conversation.
+
+## Rule Content Guidelines
+
+1. **Clarity**
+   - Use clear headings and subheadings
+   - Keep instructions concise and unambiguous
+   - Use examples when helpful
+
+2. **Structure**
+   - Organize content in logical sections
+   - Use numbered lists for sequential instructions
+   - Use bullet points for related items
+
+3. **References**
+   - Use `@file` references to include other files as context
+   - Example: `@code_rules.mdc - Coding standards reference`
+
+## Meta Section
+
+Every rule file should end with a Meta section:
+
+```markdown
+## Meta
+- Source: [source location]
+- Repository: [repository URL if applicable]
+- Parent: [parent rule if applicable]
+- Last Updated: YYYY-MM-DD
+```
+
+## Implementation Recommendations
+
+- Core project rules should use `alwaysApply: true`
+- Domain-specific rules should use targeted globs
+- Language-specific rules should match appropriate file extensions
+- Documentation rules should target documentation file types
+
+## Meta
+- Source: internal
+- Last Updated: 2024-04-06 
